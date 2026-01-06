@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const morgan = require("morgan");
 const { default: helmet } = require("helmet");
@@ -10,7 +11,9 @@ app.use(helmet());
 app.use(compression());
 
 //init db
-
+require('./dbs/init.mongodb')
+const {checkOverload} = require('./helper/check.connect')
+checkOverload()
 //init routes
 app.get("/", (req, res) => {
     const strCompress  = 'Hello Nam Dep trai'
