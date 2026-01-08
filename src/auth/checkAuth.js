@@ -36,7 +36,7 @@ const permission = (permission) => {
     return (req, res, next) => {
         if (!req.apiKey.permissions) {
             return res.status(403).json({
-                message: 'Forbidden. Permissions missing'
+                message: 'Forbidden. Permissions denied'
             })
         }
         const validPermission = req.apiKey.permissions.includes(permission)

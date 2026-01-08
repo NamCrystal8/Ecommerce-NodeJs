@@ -3,7 +3,7 @@
 ### SignUp
 POST {{url_dev}}shop/signup
 Content-Type: application/json
-x-api-key: 44567f7c53c3b14d128210232cb347b21c33866a808f4235dbb5d0533d9ebaccfbcca8543db1e3452a162d074fc322bbb7337208a3c77944dee696a632ba901d
+x-api-key: 
 
 {
     "email": "Shop299229@gmail.com",
