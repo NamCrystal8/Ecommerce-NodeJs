@@ -20,6 +20,11 @@ const RoleShop = {
 
 class AccessService {
 
+    static logout = async ({keyStore}) => {
+        const delKey = await KeyTokenService.removeKeyById(keyStore._id)
+        return delKey
+    }
+
     /*
         1 - Check mail in Dbs
         2 - match password
@@ -48,10 +53,10 @@ class AccessService {
         )
 
         await KeyTokenService.createKeyToken({
-            userId: foundShop._id,
+            refreshToken: tokens.refreshToken,
             publicKey,
             privateKey,
-            refreshToken
+            userId: foundShop._id
         })
 
         return {
